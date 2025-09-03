@@ -3,7 +3,6 @@
 Scripts repository used to analyse Arctic cod gill rakers and their link to diet and habitat preference. This repository contains the relevant scripts needed to analyse the data files for the manuscript titled:
 
 ## Assessing the link between ontogenetic shifts in gill raker and diet composition of Arctic cod (Boreogadus saida) in the Canadian Beaufort Sea-Amundsen Gulf
-
 Authored by: Marie Launay, Billy Plaitis, Andrew R. Majewski, Andrea Niemi, James D. Reist, María Quintela, Torild Johansen, and Denis Roy
 
 #
