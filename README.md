@@ -1,6 +1,8 @@
 # Arctic-cod-gillraker-linked-diet
+
 Scripts repository used to analyse Arctic cod gill rakers and their link to diet and habitat preference. This repository contains the relevant scripts needed to analyse the data files for the manuscript titled:
-### Assessing the link between ontogenetic shifts in gill raker and diet composition of Arctic cod (Boreogadus saida) in the Canadian Beaufort Sea-Amundsen Gulf
+
+## Assessing the link between ontogenetic shifts in gill raker and diet composition of Arctic cod (Boreogadus saida) in the Canadian Beaufort Sea-Amundsen Gulf
 
 Authored by: Marie Launay, Billy Plaitis, Andrew R. Majewski, Andrea Niemi, James D. Reist, María Quintela, Torild Johansen, and Denis Roy
 
@@ -20,7 +22,8 @@ Malizia et al. 2023). Gill raker (GR) data is used to calculate GR density, and 
 
 * AC_SIA.R: This script reads in Script that reads in stable isotope data determined from individual Arctic cod collected from the Beaufort Sea and assesses them for differences among the estimated age classes (determined from their length and calculated using the von Bertalanffy growth equation). The data are plotted and tested for adherence to normality and, when they do used in linear mixed effect models testing differences among age classes but also using location as a random factor. Results of among age class differences (and subsequent location differences) are then tested in pairwise assessments. Plotted data have 95% ellipses plotted, and these are used to calculate the ellipse eccentricity. Eccentricity gives an estimate of diet specificity or constraints relative to the isotopes used to describe it. The last part of the script uses SIBER (Stable Isotopes Bayesian Ellipses in R) to redo some of the basics – but importantly uses a Bayesian framework to assess diet overlap among age classes. The last bit takes some time to run – even on a relatively fast machine.
 
-### Scripts written here are to help with reproducibility and to be used with the data avaiable from the Borealis data repository at https://doi.org/10.5683/SP3/0RKRGH 
+## Note:
+Scripts written here are to help with reproducibility and to be used with the data avaiable from the Borealis data repository at https://doi.org/10.5683/SP3/0RKRGH 
 
 
 
