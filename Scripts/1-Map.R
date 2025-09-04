@@ -21,41 +21,33 @@ rm(list = ls())
 # Set working directory to get the associated files. Mostly interested
 # in getting the sampling site positions, and where to plot them on the
 # figure(s).
-setwd("/Users/denis/Library/CloudStorage/GoogleDrive-denisroy1@gmail.com/My Drive/Arctic cod/Diet Size Manuscript/2nd submission/Third submission/")
+setwd("Enter/your path/to the file/here")
 
 #### 2. Data import ####
 
 # Read in sample site coordinates from a file.File also contains
 # lats longs of where the names should appear in the produced map.
-sscoor <- read.csv("map-coords.csv", header = T, stringsAsFactors = T)
+sscoor <- read.csv("your map coords here.csv", header = T, stringsAsFactors = T)
 
 # Assign bslabs a dataframe housing the information for the 
-# Beaufort Sea lablels.
-bslabs <- data.frame(
-  Long = c(-122.5, -141.6),          # adjust X positions
-  Lat  = c(75, 71),              # adjust Y positions
-  name = c("Beaufort\nSea", "Beaufort\nSea")  # text you want on the map
-)
+# Beaufort Sea labels. Adjust X positions, adjust Y positions, and text you want on the map.
+bslabs <- data.frame(Long = c(-122.5, -141.6), Lat  = c(75, 71), name = c("Beaufort\nSea", "Beaufort\nSea"))
 
 # Assign land as a dataframe housing the information for the 
 # major land features.
-land <- data.frame(
-  Long = c(-121.9, -136.5,-112, -121),
-  Lat = c(73, 68.3, 71.2, 68.7),
-  name = c("Banks\nIsland", "Northwest Territories", 
-           "Victoria\nIsland", "Nunavut")
-)
+land <- data.frame(Long = c(-121.9, -136.5,-112, -121), Lat = c(73, 68.3, 71.2, 68.7), name = c("Banks\nIsland", "Northwest Territories", 
+           "Victoria\nIsland", "Nunavut"))
 
-# these cmds change the names of the sites with long names to appear 
-# onmore than a single line.
+# These cmds change the names of the sites with long names to appear 
+# on more than a single line.
 sscoor$site <- gsub("MacKenzie Shelf Slope", "MacKenzie\nShelf\nSlope", sscoor$site)
 sscoor$site <- gsub("MacKenzie Shelf", "MacKenzie\nShelf", sscoor$site)
 
 #### 3. Mapping ####
 
-# Make the basemap as per direction in ggOceanMaps outliining the Beaufort Sea 
+# Make the basemap as per directions in ggOceanMaps outlining the Beaufort Sea 
 # region. Add to it the sample site locations and labels, and the major land
-# features. Also include a North pointing Arrow, a scale, and a legend for the
+# features. Also include a north-pointing arrow, a scale, and a legend for 
 # the depth profile
 basemap(limits = c(-145, -110, 68, 76), shapefiles = "Arctic", rotate = TRUE, 
         bathymetry = TRUE, bathy.style = "rcg")+
@@ -88,13 +80,9 @@ inset <- data.frame(lon = c(-145, -145, -110, -110), lat = c(67, 76, 76, 67))
 
 # As above, set land2 as a data frame outlining the coords of the placement 
 # of the major land features.
-land2 <- data.frame(
-  Long = c(-112, -40),
-  Lat = c(63, 73.5),
-  name = c("Canada", "Greenland")
-)
+land2 <- data.frame(Long = c(-112, -40), Lat = c(63, 73.5), name = c("Canada", "Greenland"))
 
-# Here replot a larger scale map which will be used as the inset to our 
+# Here, replot a larger-scale map which will be used as the inset to our 
 # main map.
 basemap(limits = c(-145, -40, 55, 85), shapefiles = "Arctic", rotate = TRUE, 
         bathymetry = TRUE, bathy.style = "rcg")+
@@ -117,7 +105,7 @@ basemap(limits = c(-145, -40, 55, 85), shapefiles = "Arctic", rotate = TRUE,
 # The two maps made should be copied to the clipboard and expanded to 
 # a width of ~ 14-1600 and a height of 800 (maintaining ratios).
 
-# The large scale map can be cropped and placed in the top right corner
+# The large-scale map can be cropped and placed in the top right corner
 # of the main map as the inset.
 
 #### 5. END ####
